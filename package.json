@@ -1,0 +1,19 @@
+{
+  "name": "graphql-scratch-project",
+  "version": "1.0.0",
+  "description": "Sample app built with React, Express, MongoDB, and GraphQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "author": "Zac Haluza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
