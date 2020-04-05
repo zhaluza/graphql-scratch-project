@@ -4,7 +4,9 @@
   "description": "Sample app built with React, Express, MongoDB, and GraphQL",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "NODE_ENV=production nodemon server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "start:dev": "NODE_ENV=development webpack-dev-server & nodemon server/server.js"
   },
   "author": "Zac Haluza",
   "license": "ISC",
