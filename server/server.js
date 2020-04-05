@@ -1,6 +1,7 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 const schema = require('./schema/schema');
 const path = require('path');
@@ -20,6 +21,13 @@ mongoose.connection.once('open', () => {
 
 // handle requests for client files
 app.use(express.static(path.resolve(__dirname, '../client')));
+
+// enable cors
+const corsOptions = {
+  origin: 'http://localhost:8080',
+  credentials: true
+};
+app.use(cors(corsOptions));
 
 app.use(
   '/graphql',
