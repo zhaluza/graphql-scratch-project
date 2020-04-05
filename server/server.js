@@ -3,6 +3,7 @@ const graphqlHTTP = require('express-graphql');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const schema = require('./schema/schema');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
@@ -16,6 +17,9 @@ mongoose.connect(mongoURI, {
 mongoose.connection.once('open', () => {
   console.log('Connected to database');
 });
+
+// handle requests for client files
+app.use(express.static(path.resolve(__dirname, '../client')));
 
 app.use(
   '/graphql',
